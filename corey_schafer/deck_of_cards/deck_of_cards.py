@@ -47,15 +47,18 @@ class Player:
             c.show()
 
     def discard(self):
-        return self.hand.pop()
+        self.hand.pop()
+        return self
 
 
 deck = Deck()
-deck.show()
 deck.shuffle()
-deck.show()
 
 p = Player('Burak')
 p.draw(deck).draw(deck).draw(deck)
 print('*' * 50)
 p.show_hand()
+print('*' * 50)
+print(len(deck.cards))  # prints 49 -> (52-3) since we draw 3 cards
+p.discard().discard().discard()
+print(p.show_hand())
