@@ -1,3 +1,6 @@
+import datetime
+
+
 class Employee:
     raise_amount = 1.04  # Class variable
     num_of_employees = 0
@@ -48,6 +51,7 @@ class Employee:
             print('work day')
             return True
 
+
 # creating employees by parsing kebab-case string
 emp_str1 = 'John-Doe-7000'
 
@@ -65,7 +69,6 @@ print(emp2.__dict__)
 print(Employee.is_work_day_with_string('monday'))
 print(Employee.is_work_day_with_string('saturday'))
 
-import datetime
 my_date = datetime.date.today()
 print(my_date)
 print(Employee.is_work_day(my_date))
